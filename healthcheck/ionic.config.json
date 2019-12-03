@@ -1,0 +1,7 @@
+{
+  "name": "healthcheck",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

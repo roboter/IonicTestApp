@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button
+    (click)="doahealthcheck('https://localhost:5001/weatherforecast')"
+  >
+    localhost (https)
+  </ion-button>
+
+  <ion-button (click)="doahealthcheck('http://localhost:5000/weatherforecast')">
+    localhost (http)
+  </ion-button>
+
+  <ion-button
+    (click)="doahealthcheck('https://192.168.0.60:5001/weatherforecast')"
+  >
+    by ip (https)
+  </ion-button>
+
+  <ion-button
+    (click)="doahealthcheck('http://192.168.0.60:5000/weatherforecast')"
+  >
+    by ip (http)
+  </ion-button>
+  <div>
+    {{result}}
+  </div>
+</ion-content>
