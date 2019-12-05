@@ -19,6 +19,8 @@ namespace SimpleAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             services.AddControllers();
             services.AddHealthChecks();
         }
@@ -26,21 +28,11 @@ namespace SimpleAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-               // Add a sample response header 
-            app.Use(async (context, nextMiddleware) =>
-            {
-                context.Response.OnStarting(() =>
-                {
-                     context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
-                  //  context.Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:8100");
-                    context.Response.Headers.Add("Access-Control-Allow-Methods", "GET,POST,PATCH,DELETE,PUT,OPTIONS");
-                    //    context.Response.Headers.Add("Access-Control-Allow-Credentials", "true");
-                    context.Response.Headers.Add("Access-Control-Max-Age", "86400");
-                    //     context.Response.Headers.Add("Access-Control-Allow-Headers", "Accept");
-                    return Task.FromResult(0);
-                });
-                await nextMiddleware();
-            });
+               // global cors policy
+               app.UseCors(x => x
+                   .AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader());
 
 
             if (env.IsDevelopment())
@@ -48,7 +40,7 @@ namespace SimpleAPI
                 app.UseDeveloperExceptionPage();
             }
 
-     //       app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 
@@ -59,7 +51,6 @@ namespace SimpleAPI
                 endpoints.MapControllers();
                 endpoints.MapHealthChecks("/health");
             });
-
         }
     }
 }

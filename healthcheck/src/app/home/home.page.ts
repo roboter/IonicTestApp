@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +8,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomePage {
   result;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   doahealthcheck(url) {
-    this.http.get(url).subscribe(
+    this.http.get(url, { headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' }) }).subscribe(
       result => {
         this.result = 'success' + JSON.stringify(result);
       },
