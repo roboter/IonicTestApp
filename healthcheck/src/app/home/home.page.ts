@@ -9,7 +9,7 @@ import { marker } from '@biesbjerg/ngx-translate-extract-marker';
 })
 export class HomePage {
   result;
-  constructor(public feedbackService: FeedbackService,public toastController: ToastController,public translateService: TranslateService,public device: Device,private router: Router) { }
+  constructor(public translateService: TranslateService) { }
 
   doahealthcheck(url) {
     this.http.get(url, { headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' }) }).subscribe(
@@ -33,14 +33,6 @@ export class HomePage {
       this.form.reset();
       this.isRated = false;
       this.router.navigate(['/']);
-    }, _ => {
-      this.translateService.get('GENERAL.general-error-msg').subscribe((message: string) => {
-        this.toastController.create({
-          message,
-          showCloseButton: true,
-          duration: 3000
-        }).then(x => x.present());
-      });
     });
   }
 }
