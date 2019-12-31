@@ -7,7 +7,9 @@
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="doahealthcheck('https://localhost:5001/weatherforecast')">
+  <ion-button
+    (click)="doahealthcheck('https://localhost:5001/weatherforecast')"
+  >
     localhost (https)
   </ion-button>
 
@@ -15,11 +17,15 @@
     localhost (http)
   </ion-button>
 
-  <ion-button (click)="doahealthcheck('https://10.50.1.114:5001/weatherforecast')">
+  <ion-button
+    (click)="doahealthcheck('https://10.50.1.114:5001/weatherforecast')"
+  >
     by ip (https)
   </ion-button>
 
-  <ion-button (click)="doahealthcheck('http://10.50.1.114:5000/weatherforecast')">
+  <ion-button
+    (click)="doahealthcheck('http://10.50.1.114:5000/weatherforecast')"
+  >
     by ip (http)
   </ion-button>
 
@@ -34,3 +40,5 @@
     {{result}}
   </div>
 </ion-content>
+
+{{version}}
