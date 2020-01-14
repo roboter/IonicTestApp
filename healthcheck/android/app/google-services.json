@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "758721057323",
+    "firebase_url": "https://healthcheck-65a55.firebaseio.com",
+    "project_id": "healthcheck-65a55",
+    "storage_bucket": "healthcheck-65a55.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758721057323:android:f824f40c8ee3982584d06e",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "758721057323-qiov2bs9p2qqihh2hce8mb60ato5kn37.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoqzeaYp0nM6b_RzZRUkbi3Gr8uKJActM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "758721057323-qiov2bs9p2qqihh2hce8mb60ato5kn37.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
