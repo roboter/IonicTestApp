@@ -22,6 +22,7 @@
     "@capacitor/android": "^1.3.0",
     "@capacitor/core": "1.3.0",
     "@ionic-native/android-full-screen": "^4.20.0",
+    "@ionic-native/app-center-push": "^4.20.0",
     "@ionic-native/app-version": "^5.19.0",
     "@ionic-native/core": "^5.19.0",
     "@ionic-native/push": "^5.19.0",

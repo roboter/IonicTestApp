@@ -35,10 +35,14 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':capacitor-cordova-android-plugins')
+     // Add App Center Push module dependency
+    def appCenterSdkVersion = '2.5.1'
+    implementation "com.microsoft.appcenter:appcenter-push:${appCenterSdkVersion}"
 }
 
 apply from: 'capacitor.build.gradle'
-
+// Add this line at the bottom
+//apply plugin: 'com.google.gms.google-services'
 try {
     def servicesJSON = file('google-services.json')
     if (servicesJSON.text) {

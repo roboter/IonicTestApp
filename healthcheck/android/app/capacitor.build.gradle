@@ -10,9 +10,15 @@ android {
 apply from: "../capacitor-cordova-android-plugins/cordova.variables.gradle"
 dependencies {
 
-
+    implementation "com.microsoft.appcenter:appcenter-push:2.4.1"
+    implementation "com.microsoft.appcenter:appcenter:2.4.1"
+    implementation "com.android.support:support-v13:27.+"
+    implementation "me.leolin:ShortcutBadger:1.1.17@aar"
+    implementation "com.google.firebase:firebase-messaging:17.0.+"
 }
-
+apply from: "../../node_modules/cordova-plugin-appcenter-push/src/android/AppCenterPush.gradle"
+apply from: "../../node_modules/cordova-support-google-services/build.gradle"
+apply from: "../../node_modules/phonegap-plugin-multidex/multidex.gradle"
 
 if (hasProperty('postBuildExtras')) {
   postBuildExtras()
