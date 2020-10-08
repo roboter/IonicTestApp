@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppVersion } from '@ionic-native/app-version/ngx';
+import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,14 +21,15 @@ import { AppVersion } from '@ionic-native/app-version/ngx';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AppVersion
+    AppVersion,
+    QRScanner,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

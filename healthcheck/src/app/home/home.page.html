@@ -7,35 +7,14 @@
 </ion-header>
 
 <ion-content>
-  <ion-button
-    (click)="doahealthcheck('https://localhost:5001/weatherforecast')"
-  >
-    localhost (https)
-  </ion-button>
 
-  <ion-button (click)="doahealthcheck('http://localhost:5000/weatherforecast')">
-    localhost (http)
-  </ion-button>
 
   <ion-button
-    (click)="doahealthcheck('https://10.50.1.114:5001/weatherforecast')"
+    (click)="scanQR()"
   >
-    by ip (https)
+    ScanQR
   </ion-button>
-
-  <ion-button
-    (click)="doahealthcheck('http://10.50.1.114:5000/weatherforecast')"
-  >
-    by ip (http)
-  </ion-button>
-
-  <ion-button (click)="doahealthcheck('http://httpbin.org/get')">
-    http get (http)
-  </ion-button>
-  <ion-button (click)="doahealthcheck('https://httpbin.org/get')">
-    https get (https)
-  </ion-button>
-
+  <a [routerLink]="['/auth/login']" routerLinkActive="router-link-active"  class="">/auth/login</a>
   <div>
     {{result}}
   </div>
