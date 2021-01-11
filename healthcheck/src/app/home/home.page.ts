@@ -3,6 +3,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AppVersion } from '@ionic-native/app-version/ngx';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 
+import { Plugins } from '@capacitor/core';
+import { DatePickerPluginInterface } from '@capacitor-community/date-picker';
+
+const DatePicker: DatePickerPluginInterface = Plugins.DatePickerPlugin as any;
+const selectedTheme = 'light';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -34,14 +40,12 @@ export class HomePage {
           // camera permission was granted
 
           // start scanning
-          const scanSub = this.qrScanner
-            .scan()
-            .subscribe((text: string) => {
-              console.log('Scanned something', text);
+          const scanSub = this.qrScanner.scan().subscribe((text: string) => {
+            console.log('Scanned something', text);
 
-              this.qrScanner.hide(); // hide camera preview
-              scanSub.unsubscribe(); // stop scanning
-            });
+            this.qrScanner.hide(); // hide camera preview
+            scanSub.unsubscribe(); // stop scanning
+          });
         } else if (status.denied) {
           // camera permission was permanently denied
           // you must use QRScanner.openSettings() method to guide the user to the settings page
@@ -68,5 +72,16 @@ export class HomePage {
           this.result = 'error' + JSON.stringify(error);
         }
       );
+  }
+
+  calendar()
+  {
+  DatePicker.present({
+    mode: 'date',
+    locale: 'pt_BR',
+    format: 'dd/MM/yyyy',
+    date: '13/07/2019',
+    theme: selectedTheme,
+  }).then((date) => alert(date.value));
   }
 }
