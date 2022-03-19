@@ -5,6 +5,7 @@ import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 
 import { Plugins } from '@capacitor/core';
 import { DatePickerPluginInterface } from '@capacitor-community/date-picker';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 const DatePicker: DatePickerPluginInterface = Plugins.DatePickerPlugin as any;
 const selectedTheme = 'light';
@@ -20,7 +21,8 @@ export class HomePage {
   constructor(
     private http: HttpClient,
     private appVersion: AppVersion,
-    private qrScanner: QRScanner
+    private qrScanner: QRScanner,
+    private barcodeScanner: BarcodeScanner
   ) {
     this.appVersion
       .getVersionNumber()
@@ -32,6 +34,14 @@ export class HomePage {
   }
 
   scanQR() {
+    this.barcodeScanner
+      .scan()
+      .then((barcodeData) => {
+        console.log('Barcode data', barcodeData);
+      })
+      .catch((err) => {
+        console.log('Error', err);
+      });
     // Optionally request the permission early
     this.qrScanner
       .prepare()
@@ -66,22 +76,21 @@ export class HomePage {
       })
       .subscribe(
         (result) => {
-          this.result = 'success' + JSON.stringify(result);
+          this.result = `success${JSON.stringify(result)}`;
         },
         (error) => {
-          this.result = 'error' + JSON.stringify(error);
+          this.result = `error${JSON.stringify(error)}`;
         }
       );
   }
 
-  calendar()
-  {
-  DatePicker.present({
-    mode: 'date',
-    locale: 'pt_BR',
-    format: 'dd/MM/yyyy',
-    date: '13/07/2019',
-    theme: selectedTheme,
-  }).then((date) => alert(date.value));
+  calendar() {
+    DatePicker.present({
+      mode: 'date',
+      locale: 'pt_BR',
+      format: 'dd/MM/yyyy',
+      date: '13/07/2019',
+      theme: selectedTheme,
+    }).then((date) => alert(date.value));
   }
 }
