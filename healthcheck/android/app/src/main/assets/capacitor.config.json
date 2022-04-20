@@ -1,8 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "healthcheck",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "www",
-  "cordova": {}
+	"appId": "io.ionic.starter",
+	"appName": "myApp",
+	"webDir": "www",
+	"bundledWebRuntime": false
 }

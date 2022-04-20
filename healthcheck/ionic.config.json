@@ -1,8 +1,7 @@
 {
-  "name": "healthcheck",
+  "name": "myApp",
   "integrations": {
-    "capacitor": {},
-    "cordova": {}
+    "capacitor": {}
   },
   "type": "angular"
 }
