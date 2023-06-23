@@ -8,6 +8,6 @@ export class ApiService {
 
   constructor() { }
 
-  login = (credentials: any): Observable<any> => { return null; }
-  signUp = (credentials: any): Observable<any> => { return null; }
+  // login = (credentials: any): Observable<any> => { return ''; }
+  // signUp = (credentials: any): Observable<any> => { return ''; }
 }

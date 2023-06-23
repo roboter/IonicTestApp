@@ -16,8 +16,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  version;
-  result;
+  version: any;
+  result: any;
   constructor(private http: HttpClient) //  private appVersion: AppVersion,
   //private qrScanner: QRScanner,
   // private barcodeScanner: BarcodeScanner
@@ -30,7 +30,7 @@ export class HomePage {
     //   })
     //   .catch((error) => console.log(error));
     // Pass a custom class to each select interface for styling
-    const selects = document.querySelectorAll('.custom-options') as NodeListOf<HTMLIonSelectElement>; ;
+    const selects = document.querySelectorAll('.custom-options') as NodeListOf<HTMLIonSelectElement>;;
     console.log(selects.length);
     for (var i = 0; i < selects.length; i++) {
       selects[i].interfaceOptions = {
@@ -74,7 +74,7 @@ export class HomePage {
   //     .catch((e: any) => console.log('Error is', e));
   // }
 
-  doahealthcheck(url) {
+  doahealthcheck(url:any) {
     this.http
       .get(url, {
         headers: new HttpHeaders({

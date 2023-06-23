@@ -10,121 +10,17 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
+@import "@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
-@import "~@ionic/angular/css/normalize.css";
-@import "~@ionic/angular/css/structure.css";
-@import "~@ionic/angular/css/typography.css";
-@import "~@ionic/angular/css/display.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import '@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
-@import "~@ionic/angular/css/padding.css";
-@import "~@ionic/angular/css/float-elements.css";
-@import "~@ionic/angular/css/text-alignment.css";
-@import "~@ionic/angular/css/text-transformation.css";
-@import "~@ionic/angular/css/flex-utils.css";
-
-/* Popover Interface: set color for the popover using Item's CSS variables */
-.my-custom-interface .select-interface-option {
-  --color: #971e49;
-  --color-hover: #79193b;
-}
-
-/* Action Sheet Interface: set color for the action sheet using its button CSS variables */
-.my-custom-interface .select-interface-option {
-  --button-color: #971e49;
-  --button-color-hover: #79193b;
-}
-
-/* Alert Interface: set color for alert options (single selection) */
-.my-custom-interface .select-interface-option .alert-radio-label {
-  color: #971e49;
-}
-
-/* Alert Interface: set color for alert options (multiple selection) */
-.my-custom-interface .select-interface-option .alert-checkbox-label {
-  color: #971e49;
-}
-
-/* Alert Interface: set color for checked alert options (single selection) */
-.my-custom-interface
-  .select-interface-option[aria-checked="true"]
-  .alert-radio-label {
-  color: #79193b;
-}
-
-/* Alert Interface: set color for checked alert options (multiple selection) */
-.my-custom-interface
-  .select-interface-option[aria-checked="true"]
-  .alert-checkbox-label {
-  color: #79193b;
-}
-
-/* Popover Interface: set color for the popover using Item's CSS variables */
-.my-custom-interface .brown-option {
-  --color: #5e3e2c;
-  --color-hover: #362419;
-}
-
-.brownoption {
-  color: #79193b;
-}
-
-button.brownoption {
-  span.action-sheet-button-inner {
-    color: #79193b;
-    --button-color: #971e49;
-    --button-color-hover: #79193b;
-  }
-}
-
-.customdiv {
-  background-color: #971e49;
-  color: #fff;
-  font-size: 1.5rem;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-/* Popover Interface: set color for the popover using Item's CSS variables */
-.my-custom-interface .brown-option {
-  --color: #5e3e2c;
-  --color-hover: #362419;
-}
-
-/*
- * "my-custom-interface" needs to be passed in through
- * the cssClass of the interface options for this to work
- */
-.my-custom-interface .select-interface-option {
-  color: red;
-}
-
-.my-class .alert-wrapper {
-  max-width: 94% !important;
-}
-
-.custom-options .brown-option {
-  color: #5e3e2c;
-}
-
-/*
-    * "my-custom-interface" needs to be passed in through
-    * the cssClass of the interface options for this to work
-    */
-.my-custom-interface .select-interface-option {
-  color: red;
-}
-
-/* Popover Interface: set color for the popover using Item's CSS variables */
-.my-custom-interface .select-interface-option {
-  --color: #971e49;
-  --color-hover: #79193b;
-}
-
-.my-class .alert-wrapper {
-  max-width: 94% !important;
-}
-
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
