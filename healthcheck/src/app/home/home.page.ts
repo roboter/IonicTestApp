@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 // import { AppVersion } from '@ionic-native/app-version/ngx';
 // import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 
@@ -74,7 +75,7 @@ export class HomePage {
   //     .catch((e: any) => console.log('Error is', e));
   // }
 
-  doahealthcheck(url:any) {
+  doahealthcheck(url: any) {
     this.http
       .get(url, {
         headers: new HttpHeaders({
@@ -100,4 +101,21 @@ export class HomePage {
     //   theme: selectedTheme,
     // }).then((date) => alert(date.value));
   }
+
+  scan = async () => {
+    // Check camera permission
+    // This is just a simple example, check out the better checks below
+    await BarcodeScanner.checkPermission({ force: true });
+
+    // make background of WebView transparent
+    // note: if you are using ionic this might not be enough, check below
+    BarcodeScanner.hideBackground();
+
+    const result = await BarcodeScanner.startScan(); // start scanning and wait for a result
+
+    // if the result has content
+    if (result.hasContent) {
+      console.log(result.content); // log the raw scanned content
+    }
+  };
 }
