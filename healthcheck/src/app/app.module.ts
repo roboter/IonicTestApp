@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+//import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 // import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [],
+  //entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -24,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     //  StatusBar,
-    SplashScreen,
+    //SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     //   AppVersion,
     //  QRScanner,
