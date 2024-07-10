@@ -9,26 +9,17 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 // import { AppVersion } from '@ionic-native/app-version/ngx';
 // import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 
-@NgModule({
-  declarations: [AppComponent],
-  //entryComponents: [],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(),
-    AppRoutingModule,
-    HttpClientModule,
-  ],
-  providers: [
-    //  StatusBar,
-    //SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    //   AppVersion,
-    //  QRScanner,
-  ],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [AppComponent],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        IonicModule.forRoot(),
+        AppRoutingModule], providers: [
+        //  StatusBar,
+        //SplashScreen,
+        { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+        provideHttpClient(withInterceptorsFromDi()),
+    ] })
 export class AppModule {}
